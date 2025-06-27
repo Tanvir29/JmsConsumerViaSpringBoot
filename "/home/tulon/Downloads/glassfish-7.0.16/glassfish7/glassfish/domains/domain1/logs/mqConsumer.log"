@@ -1,0 +1,35 @@
+2025-06-27T19:01:55.307+06:00  INFO 39983 --- [demoMsgQueue] [main] c.d.d.DemoMsgQueueApplication            : Starting DemoMsgQueueApplication using Java 17.0.12 with PID 39983 (/home/tulon/Downloads/demoMsgQueue/target/classes started by tulon in /home/tulon/Downloads/demoMsgQueue)
+2025-06-27T19:01:55.308+06:00  INFO 39983 --- [demoMsgQueue] [main] c.d.d.DemoMsgQueueApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-06-27T19:01:55.700+06:00  INFO 39983 --- [demoMsgQueue] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-06-27T19:01:55.706+06:00  INFO 39983 --- [demoMsgQueue] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-27T19:01:55.706+06:00  INFO 39983 --- [demoMsgQueue] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-06-27T19:01:55.723+06:00  INFO 39983 --- [demoMsgQueue] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-27T19:01:55.723+06:00  INFO 39983 --- [demoMsgQueue] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 395 ms
+2025-06-27T19:01:55.933+06:00  INFO 39983 --- [demoMsgQueue] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-06-27T19:01:55.962+06:00  INFO 39983 --- [demoMsgQueue] [main] c.d.d.DemoMsgQueueApplication            : Started DemoMsgQueueApplication in 0.93 seconds (process running for 1.178)
+2025-06-27T19:02:07.671+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Message received: Oh boy
+2025-06-27T19:02:07.672+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : ================ Received Message Statistics ==================
+2025-06-27T19:02:07.681+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Message id: ID:205-127.0.1.1(d8:68:ee:15:ad:1a)-50146-1751029327661
+2025-06-27T19:02:07.684+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Destination: Eclipse OpenMQ Destination
+getName():		GlassfishSurveyQueue
+Class:			com.sun.messaging.Queue
+getVERSION():		3.0
+isReadonly():		false
+getProperties():	{imqDestinationName=GlassfishSurveyQueue, imqDestinationDescription=A Description for the Destination Object}
+2025-06-27T19:02:07.684+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Sent time: 1751029327661
+2025-06-27T19:02:07.685+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Delivery time: 0
+2025-06-27T19:02:07.685+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Expiration time: 0
+2025-06-27T19:02:07.687+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Message received: {"name":"Tulon","age":29}
+2025-06-27T19:02:07.688+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : ================ Received Message Statistics ==================
+2025-06-27T19:02:07.688+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Message id: ID:206-127.0.1.1(d8:68:ee:15:ad:1a)-50146-1751029327662
+2025-06-27T19:02:07.688+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Destination: Eclipse OpenMQ Destination
+getName():		GlassfishSurveyQueue
+Class:			com.sun.messaging.Queue
+getVERSION():		3.0
+isReadonly():		false
+getProperties():	{imqDestinationName=GlassfishSurveyQueue, imqDestinationDescription=A Description for the Destination Object}
+2025-06-27T19:02:07.688+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Sent time: 1751029327662
+2025-06-27T19:02:07.689+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Delivery time: 0
+2025-06-27T19:02:07.689+06:00  INFO 39983 --- [demoMsgQueue] [org.springframework.jms.JmsListenerEndpointContainer#0-1] c.dsi.demoMsgQueue.listener.msgListener  : Expiration time: 0
+2025-06-27T19:04:27.022+06:00  INFO 39983 --- [demoMsgQueue] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-27T19:04:27.028+06:00  INFO 39983 --- [demoMsgQueue] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

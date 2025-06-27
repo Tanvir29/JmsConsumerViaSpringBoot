@@ -1,0 +1,16 @@
+version: '3'
+services:
+  activemq:
+    image: rmohr/activemq:5.15.9
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    environment:
+      - ACTIVEMQ_ADMIN_LOGIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=admin
+    volumes:
+      - activemq-data:/data
+
+volumes:
+  activemq-data:
+
