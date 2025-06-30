@@ -13,6 +13,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Map;
 
 @Component
@@ -22,16 +26,14 @@ public class msgListener {
     @JmsListener(destination = "GlassfishSurveyQueue")
     public void receiveMessage(final Message message) throws JMSException, IOException {
         showLogMessages(message);
+        String messageType = message.getStringProperty("messageType");
         if (message instanceof TextMessage textMessage) {
-            String messageType = message.getStringProperty("messageType");
             if (messageType != null && messageType.equalsIgnoreCase("json")) {
                 String json = textMessage.getText();
                 // Deserialize to generic map
                 Map<String, Object> studentMap = new ObjectMapper().readValue(json, new TypeReference<>() {});
             }
         }else if (message instanceof BytesMessage bytesMessage) {
-            String messageType = message.getStringProperty("messageType");
-
             if ("Image".equals(messageType)) {
                 String fileName = message.getStringProperty("fileName");
                 String contentType = message.getStringProperty("contentType");
@@ -53,11 +55,14 @@ public class msgListener {
         if (message instanceof TextMessage) {
             logger.info("Message received: {}", ((TextMessage) message).getText());
         }
+        long timeStamp = message.getJMSDeliveryTime();
+        LocalDateTime receivedTime = Instant.ofEpochMilli(timeStamp)
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
         logger.info("================ Received Message Statistics ==================");
         logger.info("Message id: {}", message.getJMSMessageID());
-        logger.info("Destination: {}", message.getJMSDestination());
-        logger.info("Sent time: {}", message.getJMSTimestamp());
-        logger.info("Delivery time: {}", message.getJMSDeliveryTime());
-        logger.info("Expiration time: {}", message.getJMSExpiration());
+        logger.info("Received from: {}", message.getJMSDestination());
+        logger.info("Received time: {}", receivedTime);
+        logger.info("Sent by: {}", message.getStringProperty("sender"));
     }
 }
